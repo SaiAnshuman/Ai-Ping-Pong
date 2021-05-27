@@ -1,5 +1,5 @@
-rightWristX = 0;
-rightWristY = 0;
+
+rightWrist = 0;
 scorerightWrist = 0;
 gamestatus = "";
 
@@ -57,8 +57,8 @@ function modelLoaded(){
     
         console.log(results);
     
-      
-      rightWristY = results[0].pose.wrist.y;
+        results[0].pose.rightWrist.X;
+        results[0].pose.rightWrist.y;
       scorerightWrist = results[0].pose.keypoints[10].score;
 
     
@@ -100,7 +100,7 @@ function draw(){
       fill(250,0,0);
        stroke(0,0,250);
        strokeWeight(0.5);
-      paddle1Y = rightWristY; 
+      paddle1Y = rightWrist; 
       rect(paddle1X,paddle1Y,paddle1,paddle1Height,100);
       
       
