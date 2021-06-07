@@ -59,11 +59,10 @@ function modelLoaded(){
     
         console.log(results);
     
-        results[0].pose.rightWrist.x;
-        results[0].pose.rightWrist.y;
-        results[0].pose.rightWristY.y;
-        results[0].pose.rightWristX.x;
+      rightWristX = results[0].pose.rightWrist.x;
+      rightWristY = results[0].pose.rightWrist.y;  
       scorerightWrist = results[0].pose.keypoints[10].score;
+      console.log("score = " + scorerightWrist);
 
     
     }
@@ -79,6 +78,8 @@ function draw(){
      
 
     background(0); 
+
+    image(video,0,0,700,600); 
 
     fill("black");
     stroke("black");
@@ -143,9 +144,10 @@ document.getElementById("status").innerHTML = "Game Is Loaded!";
 
 function restartGame(){
 
+loop(); 
 pcscore = 0;
 playerscore=0;
-loop();
+
 
 }
 
